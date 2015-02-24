@@ -38,8 +38,9 @@ control_group 'services' do
   control 'firewall' do
     let(:firewall) { service('MpsSvc') }
     it 'should have the firewall enabled' do
-      expect(firewall).to be_running
       expect(firewall).to be_enabled
+      expect(firewall).to be_running
+      expect(firewall).to have_start_mode('Automatic')
     end
   end
 end
