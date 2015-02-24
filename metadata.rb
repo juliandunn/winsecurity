@@ -1,0 +1,7 @@
+name             'winsecurity'
+maintainer       'Chef Software, Inc.'
+maintainer_email 'jdunn@chef.io'
+license          'Apache 2.0'
+description      'Windows security demonstration cookbook'
+long_description 'Collection of controls to demonstrate Windows security'
+version          '0.1.0'
