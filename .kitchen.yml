@@ -1,15 +1,25 @@
 ---
 driver:
+  forward_agent: yes
   name: vagrant
+  customize:
+    cpus: 1
+    memory: 1024
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
+  client_rb:
+    audit_mode: :audit_only
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.4
+  - name: win2012r2-standard-chef12.0.3
+    driver_config:
+      box: win2012r2-standard-chef12.0.3
+    provisioner:
+      require_chef_omnibus: 12.2.1
 
 suites:
   - name: default
     run_list:
-    attributes:
+      - recipe[winsecurity]
+
