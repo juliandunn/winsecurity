@@ -23,7 +23,7 @@ control_group 'registry keys' do
     let(:registry_key) { windows_registry_key('HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System') }
 
     it 'should not allow shutdown without logon' do
-      expect(registry_key).to have_property_value('ShutdownWithoutLogon', :type_dword, 0)
+      expect(registry_key).to have_property_value('ShutdownWithoutLogon', :type_dword, '0')
     end
 
     # Expected to fail with a default install
